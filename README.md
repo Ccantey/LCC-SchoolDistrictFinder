@@ -1,9 +1,9 @@
 ## Minnesota Legislative Coordinating Commission
 ### Legislative district mapping application User Interface
 
-The **District Finder** application is a completely open-source full-stack, responsive (RWD) application, built with PostGIS, Leaflet, and a little TLC, that was spun off of the District Finder. The only difference is that this shows precincts as well.
+The **School District Finder** application is a completely open-source full-stack, responsive (RWD) application, built with PostGIS, Leaflet, and a little TLC, that was spun off of the District Finder. The only difference is that this shows precincts as well.
 
-See it in the wild at [http://gis.leg.mn](http://www.gis.leg.mn/OpenLayers/districts/)
+See it in the wild at [http://www.gis.leg.mn/iMaps/schooldistricts/](http://www.gis.leg.mn/iMaps/schooldistricts/)
 
 ### What's included?
 - Code
