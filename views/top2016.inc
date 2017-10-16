@@ -3,31 +3,68 @@
     <!--Begin Copy Section-->
     <!-- I just change the meta content here rather than js later -->
     <meta charset="UTF-8" />  <!-- for html5 -->
-    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />  <!-- for iPad tablet -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />  <!-- for iPad tablet -->
     <meta name="Description" content="Minnesota Legislature | LCC-GIS" />
     <meta name="Keywords" content="state government, legislature, districts, who represents me" />
     <META name="DC.Language" content="English">
     <meta  HTTP-EQUIV="Cache-Control" content="public">
-    <link rel="stylesheet" type="text/css" href="/css/20/aux_css_20.css" />
-    <link rel="stylesheet" type="text/css" href="/css/20/leg_css_20.css" />
+
+    <meta name="author" content="Leg. Coordinating Commission GIS">
+    <!--Facebook Share customization open graph meta tags. https://developers.facebook.com/tools/debug/og/object/-->
+    <meta property="fb:app_id" content="1837822423128844" />
+    <meta property="og:url"                content="http://www.gis.leg.mn/iMaps/districts/" />
+    <meta property="og:type"               content="website" />
+    <meta property="og:title"              content="Who Represents Me?" />
+    <meta property="og:description"        content="Interactive map of the Minnesota Legislature." />
+    <meta property="og:image"              content="http://www.gis.leg.mn/iMaps/districts/images/Social/social.png" />
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site:id" content="@ChrisCantey">
+    <meta name="twitter:creator" content="@ChrisCantey">
+    <meta name="twitter:title" content="Who Represents Me?">
+    <meta name="twitter:description" content="Interactive map of the Minnesota Legislature.">
+    <meta name="twitter:image" content="http://www.gis.leg.mn/iMaps/districts/images/Social/social.png">
+
+    <link rel="stylesheet" type="text/css" href="https://ww2.gis.leg.mn/css/aux_css_20.css" />
+    <link rel="stylesheet" type="text/css" href="https://ww2.gis.leg.mn/css/leg_css_20.css" />
        
 
 
-<link rel="stylesheet" type="text/css" media="print" href="/css/20/leg_cssprint_20.css" />
+<link rel="stylesheet" type="text/css" media="print" href="https://ww2.gis.leg.mn/css/leg_cssprint_20.css" />
+
 </head>
 
 <body>
-<!-- Google Tag Manager -->
+
 <script>
-  dataLayer = [];
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '1837822423128844',
+      xfbml      : true,
+      version    : 'v2.8'
+    });
+    FB.AppEvents.logPageView();
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
 </script>
-<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-WXZXH4"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-WXZXH4');</script>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-7370043-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
 <!-- End Google Tag Manager -->
 <!-- End Google Tag Manager -->
 <!--[if lt IE 8 ]> <div class="leg_IEOld"> <![endif]-->  <!-- wrapper for <=IE7 checks -->
@@ -36,6 +73,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <div class="leg_mobile_TopHeader"> 
     <div class="leg_mobile_MainTitle">
         <a href="http://www.gis.leg.mn">LCC-GIS Office</a>
+        <button id='leg_PageHeader_expand'><i class="fa fa-bars" alt="Expand LCC Options"></i></button>
     </div>
     <div class="leg_mobile_MainTitle leg_mobile_Leglink">
 	<a href="http://www.leg.state.mn.us/">MN Legislature</a>
@@ -70,7 +108,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         </ul>
 
         <div class="leg_FirstNavR">
-            	<form id="sitesearchform" name="sitesearchform" action="http://www.leg.state.mn.us/search.aspx" method="get">
+            	<form id="sitesearchform" name="sitesearchform" action="https://www.leg.state.mn.us/search.aspx" method="get">
                 <label for="leg_mainSearch" class="leg_Offscreen">Search the MN Legislature</label>
                 <input class="leg_DefaultText" name="mainsearch" type="text" value="Search the MN Legislature" maxlength="200" style="width: 185px;" />
                 <input id="leg_mainSearch" class="leg_ButtonSearch" value="Submit" type="submit" />
@@ -295,7 +333,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                     <ul>
                         <li><h3>House</h3></li>
                         <li>
-                            <form id="hfsearchform" name="billform" action="http://www.house.leg.state.mn.us/bills/billnum.asp" method="get">
+                            <form id="hfsearchform" name="billform" action="https://www.house.leg.state.mn.us/bills/billnum.asp" method="get">
                                 <input class="leg_DefaultText" id="Billnumber" name="Billnumber" value="Search HF" type="text" style="width: 100px;" maxlength="7" />                                
                                 <input class="leg_ButtonSearch" value="Submit" type="submit" />
                             </form>
@@ -309,7 +347,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                     <ul>
                         <li><h3>Senate</h3></li>
                         <li>
-                            <form id="sfsearchform" name="billform" action="http://www.senate.leg.state.mn.us/bills/billinf.php" method="get">
+                            <form id="sfsearchform" name="billform" action="https://www.senate.leg.state.mn.us/bills/billinf.php" method="get">
                                 <input class="leg_DefaultText" name="billnum" value="Search SF" type="text" style="width: 100px;" maxlength="7" />
                                 <input class="leg_ButtonSearch" value="Submit" type="submit" />
                             </form>
@@ -471,11 +509,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <!-- begin: office/dept specific contextual navigation -->
 <div class="leg_OfficeNav" id="leg_OfficeNav" tabindex="0">
         <!-- start: optional social media links -->
-        <!-- [*Add/modify social media links] -->        
-	<a href="javascript:window.print();" class="leg_Print"></a>
+        <!-- [*Add/modify social media links] -->
+        <a class="leg_SocialFB" id="shareBtn" href="#"></a>
+        <a class="leg_SocialTwitter" href="http://twitter.com/intent/tweet?url=http%3A%2F%2Fwww.gis.leg.mn%2FiMaps%2Fdistricts%2F&text=Who%20represents%20Me?%20&hashtags=mnleg" target="_blank""></a>  
+	    <a href="javascript:window.print();" class="leg_Print"></a>
         <!--<a class="leg_SocialYoutube" href="#"></a>        
-        <a class="leg_SocialTwitter" href="#"></a>
-        <a class="leg_SocialFB" href="#"></a> -->
+        <a class="leg_SocialTwitter" href="#"></a>-->
+         
         <a class="leg_SocialEmail" href="http://www.gis.leg.mn/html/staff.html"></a>
         <!-- end: optional social media -->
 
@@ -487,71 +527,72 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <!--End Copy Section-->
 
 <li class="leg_NavItem">
-<a class="leg_OfficeNavLinkonly" href="http://www.gis.leg.mn/index.html">Home</a>
+<a class="leg_OfficeNavLinkonly" href="https://ww2.gis.leg.mn/index.html">Home</a>
 <!-- accordion class is for dropdowns in mobile display -->
 </li>
 
 
 <li class="leg_NavItem">
-<h3><a class="leg_OfficeNavTop" href="http://www.gis.leg.mn/hsemapdata.htm">Maps and Data</a>
+<h3><a class="leg_OfficeNavTop" href="https://ww2.gis.leg.mn/hsemapdata.htm">Maps and Data</a>
 <a class="leg_mobile_Accordion">&nbsp;</a></h3>  <!-- accordion class is for dropdowns in mobile display -->
                 
 <div class="leg_OfficeNavCore">
 <ul>
-	<li><a href="http://www.gis.leg.mn/html/maps.html">Maps Page</a></li>
-	<li><a href="http://www.gis.leg.mn/hsemapdata.htm">House - Maps and Data</a></li>
-	<li><a href="http://www.gis.leg.mn/senmapdata.htm">Senate - Maps and Data</a></li>
-	<li><a href="http://www.gis.leg.mn/cngmapdata.htm">Congress - Maps and Data</a></li>
+    <li><a href="https://ww2.gis.leg.mn/html/maps.html">Maps Page</a></li>
+    <li><a href="https://ww2.gis.leg.mn/hsemapdata.htm">House - Maps and Data</a></li>
+    <li><a href="https://ww2.gis.leg.mn/senmapdata.htm">Senate - Maps and Data</a></li>
+    <li><a href="https://ww2.gis.leg.mn/cngmapdata.htm">Congress - Maps and Data</a></li>
 </ul>
 </div>
 </li>
 
 <li class="leg_NavItem">
-<h3><a class="leg_OfficeNavTop" href="http://www.gis.leg.mn/html/download.html">Data Services</a></h3>
+<h3><a class="leg_OfficeNavTop" href="https://ww2.gis.leg.mn/html/download.html">Data Services</a></h3>
 <a class="leg_mobile_Accordion">&nbsp;</a>  <!-- accordion class is for dropdowns in mobile display -->
                 
 <div class="leg_OfficeNavCore">
 <ul>
-	<li><a href="http://www.gis.leg.mn/php/house.php">House District Information</a></li>
-	<li><a href="http://www.gis.leg.mn/php/senate.php">Senate District Information</a></li>
-	<li><a href="http://www.gis.leg.mn/php/congress.php">Congress District Information</a></li>
-	<li><a href="http://www.gis.leg.mn/html/download.html">Download Data</a></li>
+    <li><a href="https://ww2.gis.leg.mn/php/house.php">House District Information</a></li>
+    <li><a href="https://ww2.gis.leg.mn/php/senate.php">Senate District Information</a></li>
+    <li><a href="https://ww2.gis.leg.mn/php/congress.php">Congress District Information</a></li>
+    <li><a href="https://ww2.gis.leg.mn/html/download.html">Download Data</a></li>
 </ul>
 </div>
 </li>
 
 <li class="leg_NavItem">
-<h3><a class="leg_OfficeNavTop" href="http://www.gis.leg.mn/html/maps.html">Map Services</a></h3>
+<h3><a class="leg_OfficeNavTop" href="https://ww2.gis.leg.mn/html/maps.html">Map Services</a></h3>
 <a class="leg_mobile_Accordion">&nbsp;</a>  <!-- accordion class is for dropdowns in mobile display -->
                 
 <div class="leg_OfficeNavCore">
 <ul>
-	<li><a href="http://www.gis.leg.mn/OpenLayers/districts/">Who Represents Me</a></li>
-	<li><a href="http://www.gis.leg.mn/OpenLayers/schooldistricts/">School District Finder</a></li>
-	<li><a href="http://www.gis.leg.mn/OpenLayers/precincts/">Precinct Finder</a></li>
-	<li><a href="http://www.gis.leg.mn/html/maps.html">More...</a></li>
+    <li><a href="https://ww2.gis.leg.mn/iMaps/districts/">Who Represents Me</a></li>
+    <li><a href="https://ww2.gis.leg.mn/iMaps/schooldistricts/">School District Finder</a></li>
+    <li><a href="https://ww2.gis.leg.mn/iMaps/precincts/">Precinct Finder</a></li>
+    <li><a href="https://ww2.gis.leg.mn/html/maps.html">More...</a></li>
 </ul>
 </div>
 </li>
 
 <li class="leg_NavItem">
-<h3><a class="leg_OfficeNavTop" href="http://www.gis.leg.mn/html/redistricting.html">Redistricting</a></h3>
+<h3><a class="leg_OfficeNavTop" href="https://ww2.gis.leg.mn/html/redistricting.html">Redistricting</a></h3>
 <a class="leg_mobile_Accordion">&nbsp;</a>  <!-- accordion class is for dropdowns in mobile display -->
                 
 <div class="leg_OfficeNavCore">
 <ul>
-	<li><h4>Redistricting Plans</h4></li>
-	<li><a href="http://www.gis.leg.mn/redist2010/plans.php?plname=L2012&pltype=court">2012 Legislative Districts</a></li>
-	<li><a href="http://www.gis.leg.mn/redist2010/cong10.php?name=C2012&pltype=court">2012 Congressional Districts</a></li>
-<li><a href="http://www.gis.leg.mn/html/mcplans2013.html">2013 Metropolitan Council</a></li>
-	<!--<li><a href="http://www.gis.leg.mn/html/leg02.html">2002 Legislative Districts</a></li>
-	<li><a href="http://www.gis.leg.mn/html/cong02.html">2002 Congressional Districts</a></li> -->
+    <li><h4>Redistricting Plans</h4></li>
+    <li><a href="https://ww2.gis.leg.mn/redist2010/plans.php?plname=L2012&pltype=court">2012 Legislative Districts</a></li>
+    <li><a href="https://ww2.gis.leg.mn/redist2010/cong10.php?name=C2012&pltype=court">2012 Congressional Districts</a></li>
+<li><a href="https://ww2.gis.leg.mn/html/mcplans2013.html">2013 Metropolitan Council</a></li>
+    <!--<li><a href="http://www.gis.leg.mn/html/leg02.html">2002 Legislative Districts</a></li>
+    <li><a href="http://www.gis.leg.mn/html/cong02.html">2002 Congressional Districts</a></li> -->
 </ul>
 <ul>
-	<li><h4>Redistricting Pages</h4></li>
-	<li><a href="http://www.gis.leg.mn/html/redistricting.html">2010 Redistricting</a></li>
-	<li><a href="http://www.gis.leg.mn/html/redistricting2000.html">2000 Redistricting</a></li>
-	<li><a href="http://www.gis.leg.mn/html/redistricting1990.html">1990 Redistricting</a></li>
+    <li><h4>Redistricting Pages</h4></li>
+    <li><a href="https://ww2.gis.leg.mn/html/redistricting.html">2020 Redistricting</a></li>
+    <li><a href="https://ww2.gis.leg.mn/html/redistricting2010.html">2010 Redistricting</a></li>
+    <li><a href="https://ww2.gis.leg.mn/html/redistricting2000.html">2000 Redistricting</a></li>
+    <li><a href="https://ww2.gis.leg.mn/html/redistricting1990.html">1990 Redistricting</a></li>
 </ul>
 </div>
 </li>   
@@ -562,8 +603,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 
 <div class="leg_OfficeNavCore">
 <ul>
-	<li><a href="http://www.gis.leg.mn/html/about.html">About</a></li>
-	<li><a href="http://www.lcc.leg.mn/staff.html">Contact Us</a></li>
+    <li><a href="https://ww2.gis.leg.mn/html/about.html">About</a></li>
+    <li><a href="http://www.lcc.leg.mn/staff.html">Contact Us</a></li>
 <li><a href="http://www.lcc.leg.mn/">LCC Home Page</a></li>
 </div>
 </li>
@@ -576,4 +617,4 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <!-- end: header section -->
 
 <!-- start: page-specific content section -->
-<div class="leg_PageContent" id="leg_PageContent" tabindex="0">  
+<div class="leg_PageContent" id="leg_PageContent" tabindex="0"> 

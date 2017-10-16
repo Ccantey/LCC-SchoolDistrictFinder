@@ -84,11 +84,14 @@
     border-left: 3px solid #a7a5a6;
 }
 #mask p{
-    margin-top: 35px;
+    margin-top: 10px;
     padding:0 10px;
 }
-#mask ol{
+#mask ul{
+    margin-top:-7px;
     font-size: 1.1em;
+    margin-left:0;
+    text-align: center;
 }
 #mask img{
     margin-left:31%;
@@ -96,7 +99,7 @@
 }
 #mask li{
         padding:7px;
-    }
+}
 
 #map{
     width:70%;
@@ -193,6 +196,7 @@ ul{
 
 }
 .mnhouse, .mnsenate, .ushouse, .ussenate1, .ussenate2 {
+    position:relative;
     height:71px;
     background-color: #e6e6e6;
     border-top: 1px solid #a7a5a6;
@@ -233,7 +237,6 @@ ul{
     top:-7px;
     text-align: center;
     z-index: 101;
-
 }
 .lcc_gis_member{
     overflow:hidden;
@@ -270,10 +273,10 @@ ul{
 }
 #officials img {
     height: 100%;
-    min-height: 69px;
+    min-height: 71px;
     max-width: 65%;
-    position: relative;
-    top: -55px;
+    position: absolute;
+    top: 0;
     border:none;
 }
 

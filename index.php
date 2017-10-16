@@ -2,31 +2,39 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+	<script src="https://code.jquery.com/jquery-1.9.1.js"></script>
 	<!--<script src="http://code.jquery.com/jquery-migrate-1.2.1.js"></script>-->
 	<!--<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>-->
+
 	<!-- load the header -->
 	<?
+	// Require https
+	// YOU NEED TO ADD HTTPS TO GOOGLE API!
+	// if ($_SERVER['HTTPS'] != "on") {
+	//     $url = "https://". $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];
+	//     header("Location: $url");
+	//     exit;
+	// }
 	    define('INCLUDEPATH',"views/");
-	    include(INCLUDEPATH."top2012.inc");
+	    include(INCLUDEPATH."top2016.inc");
 
 	?>
-	<script src="js/app.js"></script>
-	<script src="js/helper.js"></script>
+	
 	<!-- Bring over the core js from top.inc -->
-	<script type="text/javascript" src="../../css/leg_core_20.js"></script>
-	<script type="text/javascript"  src="../../css/leg_mobile_20.js"></script>
-	<script type="text/javascript" src="../../css/js/hideshow2.js"></script>
-	<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.5/leaflet.css" />
+
+	<!-- <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" /> -->
+	<link href='https://api.mapbox.com/mapbox.js/v3.0.1/mapbox.css' rel='stylesheet' />
 	<link rel="stylesheet" href="css/plugins/css/font-awesome.min.css" />
 	<link rel="stylesheet" href="css/app.css" />
-	<script src="http://cdn.leafletjs.com/leaflet-0.7.5/leaflet.js"></script>
+	<script src="js/app.js"></script>
+	<script src="js/helper.js"></script>
+	<!-- <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script> -->
     <!--uses Google JS APi -not geocoding API -->
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCAPiQ_pNX0vOYz5w04VSn0WUTS_5knWOg" > 
     </script>
-	<!--<script src="http://cdn.jsdelivr.net/leaflet.esri/1.0.0/esri-leaflet.js"></script>-->
+    <script src='https://api.mapbox.com/mapbox.js/v3.0.1/mapbox.js'></script>
 
-
+</head>
 <div class='leg_Col4of4-First'> <!-- Closes in footer - so leave this openended -->
 	<h2 id='map_title'>School District Finder</h2>
 	<div id='map_reset'><a class='noref'>Reset Map <i class="fa fa-refresh"></i></a></div>
@@ -140,15 +148,28 @@
 	    <div id="pull-in">
 		    <i class="fa fa-chevron-left"> </i>
 	    </div>
-	    	<p><strong>To begin your search: </strong></p>
-	    	<ol>
-	    		<li>For best results, enter a complete Minnesota address including city, state, and zip code.</li>
-	    		<li>Single-click or touch the map to select a search location. </li>
-	    		<li>Select an elected official to view the official's web page/contact information.</li>
-	    		<li>Select <span class='contact'>Show District <i class="fa fa-external-link"></i></span> on member results to view the member's district boundary on the map.</li>
-	    		<li>Please note <span style="color:#a54a36; font-size:11px; padding:5px;"><i class="fa fa-info-circle"></i> Help</span> and <span style="color:#a54a36; font-size:11px; padding:5px;" class='noref' >Disclaimer <i class="fa fa-exclamation-triangle"></i> </span> below the map and <span style="color:#a54a36; font-size:11px; padding:5px;"><i class="fa fa-refresh"></i> Reset Map</span> above the map.</li>
+	    	<p><strong>Get Started: </strong></p>
+	    	<ul>
+	    		<li>For best results, enter a complete Minnesota address.</li>
+                <span class="center"> -- or -- </span>
 
-	    	</ol>
+	    		<li>Single-click or touch the map to select a search location. </li>
+	    	</ul>
+                <hr>
+            <!-- <p><strong>On Results Tab: </strong></p> -->
+            <ul>
+	    		<!-- <li>Select member in results tab to view district boundary on the map.</li>
+
+	    		<li>Select <span class='contact'>Member webpage <i class="fa fa-external-link"></i></span> in results tab to view the official's web page/contact information.</li> -->
+
+	    		<li class="helpers">Please note the 
+	    		    <span style="color:#a54a36; font-size:11px; padding:5px;">
+	    		        <i class="fa fa-info-circle"> </i>
+	    		        <i class="fa fa-exclamation-triangle"> </i>
+	    		        <i class="fa fa-refresh"> </i>
+	    		    </span> helpers placed around the map.</li>
+
+	    	</ul>
 	
 	    </div>
 	   

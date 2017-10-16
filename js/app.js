@@ -105,7 +105,7 @@ function geoCodeAddress(geocoder, resultsMap) {
       identifyDistrict(pos);
       geocodeFeedback(precision, components);
     } else {
-      alert('Geocode was not successful for the following reason: ' + status);
+      geoCodeMBAddress(address);
       $('.loader').hide();
     }
   });
@@ -129,12 +129,20 @@ function geocodeFeedback(precision, components){
 	
 }
 
+function geoCodeMBAddress(address){
+	L.mapbox.accessToken = 'pk.eyJ1IjoiY2NhbnRleSIsImEiOiJjaWVsdDNubmEwMGU3czNtNDRyNjRpdTVqIn0.yFaW4Ty6VE3GHkrDvdbW6g';
+    var geocoder = L.mapbox.geocoder('mapbox.places')
+    geocoder.query(address, showMapBoxMap)
+
+	return false;
+}
+
 //submit search text box - removed button for formatting space
 function keypressInBox(e) {
     var code = (e.keyCode ? e.keyCode : e.which);
     if (code == 13) { //Enter keycode                        
         e.preventDefault();
-        dataLayer.push({'event': 'enterKeyGeocode'});
+        // dataLayer.push({'event': 'enterKeyGeocode'});
         geoCodeAddress(geocoder, map);
     }
 };
@@ -246,7 +254,8 @@ function showDistrict(div){
     	"weight": 2,
     	"opacity": 0.65
 	};
-    console.log(geojson.features[3]);
+	var thismember = div + ' ' + geojson.features[divmap[div]].properties.district;
+    ga('send', 'event', 'member', 'showmapdistrict', thismember);
     mapDistrictsLayer = L.geoJson(geojson.features[divmap[div]], {
 		style:myStyle,
 		onEachFeature: function (feature, layer) {
