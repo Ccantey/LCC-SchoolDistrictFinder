@@ -279,7 +279,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                         <li><h3>Joint</h3></li>
                         <li><a href="http://www.commissions.leg.state.mn.us/">Joint Committees &amp; Task Forces</a></li>
                         <li><a href="http://www.leg.state.mn.us/leg/deadlines.aspx">Committee Deadlines</a></li>
-                        <li><a href="http://www.house.leg.state.mn.us/bills/confcommactivity.asp">Bills In Conference Committtee</a></li>
+                        <li><a href="http://www.house.leg.state.mn.us/bills/confcommactivity.asp">Bills In Conference Committee</a></li>
                         <li><a href="https://www.revisor.mn.gov/bin/sbs.php">Side by Side Comparisons</a></li>                        
                     </ul>
                 </div>
@@ -326,7 +326,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                         <li><a href="http://www.leg.state.mn.us/leg/legis.aspx">Bill Search &amp; Status</a></li>
                         <li><a href="http://www.house.leg.state.mn.us/leg/billsublogin.asp">MyBills</a></li>
                         <li><a href="https://www.revisor.mn.gov/bin/sbs.php">Side by Side Comparisons</a></li>
-                        <li><a href="http://www.house.leg.state.mn.us/bills/confcommactivity.asp">Bills In Conference Committtee</a></li>
+                        <li><a href="http://www.house.leg.state.mn.us/bills/confcommactivity.asp">Bills In Conference Committee</a></li>
                         <li><a href="http://www.leg.state.mn.us/lrl/vetoes/vetodetails.aspx">Vetoes</a></li>
                         <li><a href="https://www.revisor.mn.gov/laws/current/">Current Session Laws</a></li>
                     </ul> 

@@ -633,8 +633,11 @@ ul{
  
 /*Begin Responsive Web Design*/
 @media screen and (max-width: 500px) {
+  .leg_PageHeader{
+    display:none;
+  }
   .leg_PageContent{
-     max-height: 645px;
+     max-height: 655px;
     }
   .search{
     background-color:white;
@@ -652,15 +655,28 @@ ul{
     height:37px;
     font-size:1.2em;
      /* Firefox */
-        width: -moz-calc(100% - 69px);
+        width: -moz-calc(100% - 68px);
         /* WebKit */
-        width: -webkit-calc(100% - 69px);
+        width: -webkit-calc(100% - 68px);
         /* Opera */
-        width: -o-calc(100% - 69px);
+        width: -o-calc(100% - 68px);
         /* Standard */
-        width: calc(100% -69px);
+        width: calc(100% -68px);
 
   }
+  #leg_PageHeader_expand{
+    display:block;
+    position:absolute;
+    top:13px;
+    right:15px;
+    padding:12px;
+    background-color: #990033;
+    color:white;
+    border:2px solid white;
+    border-radius:2px;
+    z-index: 1000;
+}
+
   #searchButton{
     display:block;
     position:absolute;
@@ -674,15 +690,15 @@ ul{
 }
   #map{
     /*position:absolute;*/
-    top:-630px;
+    top:-620px;
     width:99%;
     height:500px;
   }
   #triangle-topright{
-    top:90px;
+    top:101px;
   }
   #sidebar{
-    top:-22px;
+    top:-12px;
     left:-100%;
     z-index:101;
     width:100%;
@@ -702,26 +718,29 @@ ul{
     left:80px;
   }
   #map_layers{
-    top:90px;
+    top:101px;
   }
 
   #toggleSidebar{
         display:block;
-        padding:5px;
+        font-size:1.2rem;
+        padding:18px;
         background-color: #3b3b3b;
         text-align:center;
         margin:0;
         color:#e6e6e6;
+        border-left: 3px solid #a7a5a6;
     }
   .popup{
         width:100%;
         height: 82%;
+        bottom:21px;
     }
     #geocodeFeedback{
         text-align: center;
     }
     #map_reset{
-        bottom:-22px;
+        bottom:-28px;
     }
     #pull-out{
         border-bottom-left-radius: 0;
@@ -758,7 +777,7 @@ ul{
         border-radius:2px;
     }
     .search label {
-        left: 37px;
+        /*left: 37px;*/
         position: relative;
     }
 }

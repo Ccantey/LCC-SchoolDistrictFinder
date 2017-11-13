@@ -36,6 +36,11 @@ $( document ).ready(function() {
     	ga('send', 'event', 'geolocate', 'mobileGPS', 'click');
     });
 
+    $('#leg_PageHeader_expand').click(function(e){
+    	$('.leg_PageHeader').toggle();
+        }
+    );
+
     // enter key event
     $("#geocodeAddress").bind("keypress", {}, keypressInBox);
     
