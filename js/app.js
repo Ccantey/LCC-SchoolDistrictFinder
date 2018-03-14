@@ -59,7 +59,7 @@ function toggleBaseLayers(el, layer1, layer2){
 function getOverlayLayers(el, switchId){
     $('.loader').show();
 
-    switchMap = {"sdonoffswitch": "sd1516","countyonoffswitch": "cty2010", "cityonoffswitch":"mcd2015", "cononoffswitch":"cng2012", "ssonoffswitch":"sen2012_vtd2015", "shonoffswitch":"hse2012_vtd2015"}
+    switchMap = {"sdonoffswitch": "sd1718","countyonoffswitch": "cty2010", "cityonoffswitch":"mcd2015", "cononoffswitch":"cng2012", "ssonoffswitch":"sen2012_vtd2015", "shonoffswitch":"hse2012_vtd2015"}
     console.log(switchMap[switchId]);
    
     if(el.is(':checked')){
@@ -70,7 +70,7 @@ function getOverlayLayers(el, switchId){
     	$('.leaflet-marker-icon.'+switchMap[switchId]).show();
 
     	if(typeof overlayLayers[switchMap[switchId]] === 'undefined'){
-    		overlayLayers[switchMap[switchId]] = L.tileLayer.wms('http://www.gis.leg.mn/cgi-bin/mapserv?map=/web/gis/iMaps/schooldistricts/data/mapserver.map', {
+    		overlayLayers[switchMap[switchId]] = L.tileLayer.wms('https://www.gis.leg.mn/cgi-bin/mapserv?map=/web/gis/iMaps/schooldistricts/data/mapserver.map', {
 			    format: 'image/png',
 			    transparent: false,
 			    minZoom: 6,
