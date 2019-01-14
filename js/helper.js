@@ -34,53 +34,50 @@ $( document ).ready(function() {
     	e.preventDefault();
     	zoomToGPSLocation();
     	ga('send', 'event', 'geolocate', 'mobileGPS', 'click');
+    	slideSidebar();
     });
-
-    $('#leg_PageHeader_expand').click(function(e){
-    	$('.leg_PageHeader').toggle();
-        }
-    );
 
     // enter key event
     $("#geocodeAddress").bind("keypress", {}, keypressInBox);
     
     // both key and enter fire geoCodeAddress
-    $('#searchButton').click(function(e){
+    $(document).on('click', '#searchButton', function(e){
     	e.preventDefault();
     	ga('send', 'event', 'geolocate', 'searchbutton', 'click');
-    	geoCodeAddress(geocoder, map);
+    	address = document.getElementById('geocodeAddress').value;
+    	geoCodeAddress(geocoder, map, address);
     })
 	
 	// hide links - format is off until results come back
     $('.memberLink').hide();
 
-    // $('.precincts').click(function(e){
-    // 	//console.log($(this).data('webid'))
-    // 	window.open('http://pollfinder.sos.state.mn.us/');
-    // })
+    $('.precincts').click(function(e){
+    	//console.log($(this).data('webid'))
+    	window.open('http://pollfinder.sos.state.mn.us/');
+    })
 
-    $( ".precincts, .mnhouse, .mnsenate, .ushouse, .ussenate1, .ussenate2" ).click(function(e) {
-        var link = '';
-        // dataLayer.push({'event': 'memberclick'});
-        link = $(this).attr('data-webid');
-    	ga('send', 'event', 'member', 'contactMember', link);
-    	window.open(link)
-    });
+    // $( ".mnhouse, .mnsenate, .ushouse, .ussenate1, .ussenate2" ).click(function(e) {
+    //     var link = '';
+    //     // dataLayer.push({'event': 'memberclick'});
+    //     link = $(this).attr('data-webid');
+    // 	//console.log($(this).data('webid'))
+    // 	window.open(link)
+    // });
 
 	// Members UI click turn red with 'active' class
-	$( ".memberLink, .precinctLink" ).click(function(e) {
+	$( "#mnhousemap, #mnsenmap, #ushousemap, #ussenatemap, #ussenate2map, #precinctmap" ).click(function(e) {
 		e.stopPropagation();
-		// dataLayer.push({'event': 'zoomToDistrict'});
+
+		//need to color div 3 levels up
 		var mom = $(this).parent();
 		var grandma = mom.parent();
-		var child = $(this).children();
-		// console.log(mom);
-		console.log(grandma);
-		// console.log(child);
+		var greatgrandma = grandma.parent();
+		// console.log(greatgrandma.attr('class'))
+		// ga('send', 'event', 'member', 'showmapdistrict', 'click');
+
         grandma.addClass('active').siblings().removeClass('active');
         //get static minnesota geojson (faster than php)
-		if (child.is('#ussenatelink') || child.is('#ussenate2link')){
-			//console.log(child);
+		if (this.id == 'ussenatelink' || this.id == 'ussenate2link'){
 		  	if(typeof MinnesotaBoundaryLayer === 'undefined'){
 					$.getJSON("./data/Minnesota2015.json", function(data) {
 						var myStyle = {
@@ -89,15 +86,13 @@ $( document ).ready(function() {
 		    				"opacity": 0.65
 						};
 						MinnesotaBoundaryLayer = L.geoJson(data, {style:myStyle});
-		  			}).done(function(){
-		  				
+		  			}).done(function(){		  				
 		  				showSenateDistrict();
 		  			});
 		  		} else {
 		  			showSenateDistrict();
 		  		}	
 		} else {
-			console.log(grandma.attr('class'));
 	        showDistrict(grandma.attr('class'));
 	    }
 	    
@@ -106,15 +101,15 @@ $( document ).ready(function() {
 	//Open layers tab
 	$('#triangle-topright').click(function(){
   		$(this).animate({right:'-100px'},250, function(){
-    		$('#map_layers').animate({right:0},250);
+    		$('#map_layers').animate({right:'0'},250);
     		ga('send', 'event', 'layers', 'openLayersTab', 'click');
   		});  
 	});
 
     //Close layers tab
 	$('#map_layers_toggle').click(function(){
-  		$('#map_layers').animate({right:'-225px'},250, function(){
-    		$('#triangle-topright').animate({right:0},250);
+  		$('#map_layers').animate({right:'-227px'},250, function(){
+    		$('#triangle-topright').animate({right:'0'},250);
   		});  
 	});
 	
@@ -166,8 +161,8 @@ $( document ).ready(function() {
 			if (typeof layer._url === "undefined" || typeof layer.defaultWmsParams !== "undefined"){
 				map.removeLayer(layer);				
 			};	
-		});
-		ga('send', 'event', 'map', 'mapreset', 'reset'); 
+		});	
+		ga('send', 'event', 'map', 'mapreset', 'reset');   
 	});
 
 	//----- OPEN Modal
@@ -192,8 +187,8 @@ $( document ).ready(function() {
     });    
 
 	$('.loader').hide();
-    
-    document.getElementById('shareBtn').onclick = function() {
+	
+	$('#shareBtn').on('click', function() {
 		ga('send', 'event', 'socialmedia', 'facebook', 'click');
 
 	  FB.ui({
@@ -201,11 +196,12 @@ $( document ).ready(function() {
 	    display: 'popup',
 	    href: 'http://www.gis.leg.mn/iMaps/districts/',
 	  }, function(response){});
-	};
+	});
 
 	$('.leg_SocialTwitter').click(function(){
 		ga('send', 'event', 'socialmedia', 'twitter', 'click');
 	})
+
 	console.log("Welcome to the 'Who Represents Me?' legislative district finder application, developed by the MN State Legislative Coordinating Commission. The application's responsive web design(RWD), open-source code can be found at 'https://github.com/Ccantey/LCC-DistrictFinder'.")
 
 });//end ready()

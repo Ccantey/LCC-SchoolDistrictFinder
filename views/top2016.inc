@@ -16,21 +16,21 @@
     <meta property="og:type"               content="website" />
     <meta property="og:title"              content="Who Represents Me?" />
     <meta property="og:description"        content="Interactive map of the Minnesota Legislature." />
-    <meta property="og:image"              content="http://www.gis.leg.mn/iMaps/districts/images/Social/social.png" />
+    <meta property="og:image"              content="http://www.gis.leg.mn/iMaps/districts/images/Social/social3.png" />
 
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site:id" content="@ChrisCantey">
     <meta name="twitter:creator" content="@ChrisCantey">
     <meta name="twitter:title" content="Who Represents Me?">
     <meta name="twitter:description" content="Interactive map of the Minnesota Legislature.">
-    <meta name="twitter:image" content="http://www.gis.leg.mn/iMaps/districts/images/Social/social.png">
+    <meta name="twitter:image" content="https://www.gis.leg.mn/iMaps/districts/images/Social/social2.png">
 
-    <link rel="stylesheet" type="text/css" href="https://ww2.gis.leg.mn/css/aux_css_20.css" />
-    <link rel="stylesheet" type="text/css" href="https://ww2.gis.leg.mn/css/leg_css_20.css" />
+    <link rel="stylesheet" type="text/css" href="css/aux_css_20.css" />
+    <link rel="stylesheet" type="text/css" href="css/leg_css_20.css" />
        
 
 
-<link rel="stylesheet" type="text/css" media="print" href="https://ww2.gis.leg.mn/css/leg_cssprint_20.css" />
+<link rel="stylesheet" type="text/css" media="print" href="css/leg_cssprint_20.css" />
 
 </head>
 
@@ -287,7 +287,7 @@
                         <li><a href="http://www.house.leg.state.mn.us/hinfo/leginfo/memroster.pdf">Legislators Roster</a></li>
                         <li><a href="http://www.house.leg.state.mn.us/hinfo/leginfo/elecdir10.pdf">Election Directory</a></li>                        
                         <li><a href="http://www.leg.state.mn.us/legdb/">Legislators Past &amp; Present</a></li>
-                        <li><a href="http://www.leg.state.mn.us/leg/districtfinder.aspx">Who Represents Me?</a></li>
+                        <li><a href="https://www.gis.leg.mn/iMaps/districts/">Who Represents Me?</a></li>
                     </ul>
                 </div>
             </li>
@@ -444,7 +444,7 @@
                     <ul>
                         <li><h3>Joint</h3></li>
                         <li><a href="http://www.house.leg.state.mn.us/htv/htv.asp">Broadcast TV Schedule</a></li>
-                        <li><a href="http://www.lcc.leg.mn/meetings-all.htm">Commission Audio/Video</a></li>
+                        <li><a href="https://www.commissions.leg.state.mn.us/meetings-all.htm">Commission Audio/Video</a></li>
                     </ul>
                 </div>
             </li>
